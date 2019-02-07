@@ -14,16 +14,20 @@
 </head>
 <body>
     <header>
-        <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+        <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-danger">
             <div class="container">
-                <a href="#" class="navbar-brand">Brand</a>
+                <a href="#" class="navbar-brand"><img src="{{ url_for('static', filename='brand.png') }}" alt="">
+               <span class="ml-2">BRAND NAME</span>
+            </a>
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarMenu">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a href="#" class="nav-link">User</a></li> 
-                        <li class="nav-item"><a href="#" class="nav-link">New</a></li> 
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mr-2"><a href="#" class="nav-link">Home</a></li> 
+                        <li class="nav-item mr-2"><a href="#" class="nav-link">About</a></li> 
+                        <li class="nav-item mr-2"><a href="#" class="nav-link">Login</a></li> 
+                        <li class="nav-item mr-2"><a href="#" class="nav-link">Register</a></li> 
                     </ul>
                 </div>
             </div>
