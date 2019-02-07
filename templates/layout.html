@@ -13,18 +13,26 @@
     {% endif %}
 </head>
 <body>
-    <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-primary">
-        <a href="#" class="navbar-brand">Brand</a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarMenu">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a href="#" class="nav-link">User</a></li> 
-                <li class="nav-item"><a href="#" class="nav-link">New</a></li> 
-            </ul>
-        </div>
-    </nav>
+    <header>
+        <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-danger">
+            <div class="container">
+                <a href="#" class="navbar-brand"><img src="{{ url_for('static', filename='brand.png') }}" alt="">
+               <span class="ml-2">BRAND NAME</span>
+            </a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mr-2"><a href="#" class="nav-link">Home</a></li> 
+                        <li class="nav-item mr-2"><a href="#" class="nav-link">About</a></li> 
+                        <li class="nav-item mr-2"><a href="#" class="nav-link">Login</a></li> 
+                        <li class="nav-item mr-2"><a href="#" class="nav-link">Register</a></li> 
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
     {% block content %}
     {% endblock content %}
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
