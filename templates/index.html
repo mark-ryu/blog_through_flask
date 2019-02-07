@@ -1,13 +1,21 @@
-{% extends 'layout.html' %}
 
+{% extends "layout.html" %}
 {% block content %}
-
+    <main>
+        <div class="front-page mx-auto"></div>
+           <div class="content mt-2"> 
     {% for post in posts %}
-        <main>
-            <h1>{{ post.title }}</h1>
-            <p>By {{ post.author }} on {{ post.date_posted}}</p>
-            <p> {{ post.content }}</p>
-        </main>
+                <article class="media col-md-8 mx-auto content-section">
+                    <div class="media-body sample">
+                        <div class="article-metadata">
+                            <a class="mr-2" href="#">{{ post.author }}</a>
+                            <small class="text-muted">{{ post.date_posted }}</small>
+                        </div>
+                        <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+                        <p class="article-content">{{ post.content }}</p>
+                    </div>
+                </article>
     {% endfor %}
-
+            </div>
+    </main>
 {% endblock content %}

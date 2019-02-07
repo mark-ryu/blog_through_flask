@@ -1,1 +1,11 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+.sample {
+  background-color: #f3f3f3;
+}
+
+.front-page {
+  background: url(https://source.unsplash.com/random);
+  height: 30vh;
+  width: 80vw;
+  background-size: cover;
+}
+/*# sourceMappingURL=main.css.map */

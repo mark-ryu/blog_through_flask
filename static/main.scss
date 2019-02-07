@@ -1,0 +1,11 @@
+$for-testing-colors: #f3f3f3;
+
+.sample {
+    background-color: $for-testing-colors;
+}
+.front-page {
+    background: url(https://source.unsplash.com/random);
+    height: 30vh;
+    width: 80vw;
+    background-size: cover;
+}
