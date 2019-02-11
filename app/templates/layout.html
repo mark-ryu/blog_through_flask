@@ -14,7 +14,7 @@
     {% endif %}
 </head>
 <body>
-    <header>
+    <header class="fixed-top">
         <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-danger">
             <div class="container">
                 <a href="#" class="navbar-brand"><img src="{{ url_for('static', filename='brand.png') }}" alt="">
@@ -49,6 +49,7 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
+    <div class="mt-5"><br></div>
     {% block content %}
     {% endblock content %}
     <footer class="mb-5">
