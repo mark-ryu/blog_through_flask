@@ -1,7 +1,16 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    <h1>
-        {{ current_user.username }}
-    </h1>
+        <div class="content col-md-8 col-lg-5 col-10 mx-auto mt-4 p-2">
+            <section class="container-fluid p-2 mb-1 row md-n12 mx-auto">
+                <div class="mx-auto account">
+                    <img class="img-fluid mx-auto rounded-circle account-img" src="{{ image_file }}" alt="">
+                <div class="account-info">
+                    <div>
+                        <p class="label text-center mt-2 mb-0">{{ current_user.username }}</p></a>
+                        <p class="text-muted text-center p-0 m-0">{{ current_user.email }}</p>
+                    </div>
+                </div>
+            </section>
+        </div>
 {% endblock content %}
