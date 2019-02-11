@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='main.js') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- font awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     {% if title %}
         <title>{{ title }}</title>
     {% else %}
@@ -52,11 +54,22 @@
     <div class="mt-5"><br></div>
     {% block content %}
     {% endblock content %}
-    <footer class="mb-5">
-
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<div class="mt-5"><br></div>
+<footer class="footer mb-1 mt-2 fixed-bottom">
+    <div class="container p-1 col-lg-12">
+        <div class="col-lg-6 mx-auto">
+            <a href="https://www.facebook.com/Mark-Development-303696167164017/" i class="fa fa-facebook-official"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/arvin-mark-atienza-687851143/" i class="fa fa-linkedin"></i></a>
+            <div class="d-inline">
+            <span style="font-size:0.7rem; color:rgba(100,100,38, 0.9); text-align: right;">&#169;Arvin Mark Atienza</span>
+            </div>
+        </div>
+    </div>
+</footer>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
+
 </html>

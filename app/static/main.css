@@ -3,20 +3,10 @@ a {
   color: #fff !important;
 }
 
-body, html {
-  background-color: #212727 !important;
-}
-
-.sample {
-  background-color: red;
-}
-
-.sample-2 {
-  background-color: yellow;
-}
-
-.sample-3 {
-  background-color: blue;
+body{
+  background: url(https://images.unsplash.com/photo-1505771215590-c5fa0aec29b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80);
+  background-size: cover;
+/*   background-color: #212727 !important; */
 }
 
 .img-area {
@@ -60,7 +50,7 @@ body, html {
 }
 
 .nav-link:hover {
-  background: #fff;
+  background: rgba(252,252,252, 0.8);
   border-radius: 15px;
   color: #000 !important;
   -webkit-transition: 700ms;
@@ -71,5 +61,16 @@ body, html {
 
 .col-md-4 {
   text-align: center;
+}
+
+footer {
+  background: rgba(0,0,0, 0.8);
+}
+.fa {
+  transition: ease-in-out 0.2s;
+}
+.fa:hover {
+  opacity: 0.5;
+  transition: ease-in-out 0.2s;
 }
 /*# sourceMappingURL=main.css.map */
