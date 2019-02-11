@@ -1,8 +1,8 @@
 from app.models import User, Post
 from app import app, db, bcrypt
-from flask import render_template, url_for, flash, redirect
+from flask import render_template, url_for, flash, redirect, request
 from app.forms import RegistrationForm, LoginForm
-
+from flask_login import login_user, current_user, logout_user, login_required
 
 posts = [
     {
@@ -35,8 +35,11 @@ if the form is valid, then use the flash to send a feedback message
 redirect is when the process is a success the redirected url will be shown to the user
 
 """
+
 @app.route('/register', methods=['GET','POST'])
 def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
     form = RegistrationForm()
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
@@ -48,13 +51,55 @@ def register():
     return render_template('register.html', form=form, title='Register')
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route("/login", methods=['GET', 'POST'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
     form = LoginForm()
     if form.validate_on_submit():
-        if form.username.data == "sample@gmail.com" and form.password.data == "password":
-            flash(f'Logged in as {form.username.data}', 'success')
-            return redirect(url_for('index'))
+        user = User.query.filter_by(username=form.username.data).first() 
+        if user and bcrypt.check_password_hash(user.password, form.password.data):
+            login_user(user, remember=form.remember.data)
+            next_page = request.args.get('next')
+            return redirect(next_page) if next_page else redirect(url_for('index'))
         else:
             flash('Login Unsuccessful, try again.', 'danger')
     return render_template('login.html', form=form, title='Login')
+
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
+
+
+
+@app.route("/account")
+@login_required
+def account():
+    return render_template('account.html', title='Account')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
